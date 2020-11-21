@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: testazure 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testazure
+  template:
+    metadata:
+      labels:
+        app: testazure 
+    spec:
+      containers:
+        - name: testazure 
+          image: azuretestregistery.azurecr.io/testazure
+          ports:
+          - containerPort: 8080
